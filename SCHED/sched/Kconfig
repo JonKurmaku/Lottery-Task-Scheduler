@@ -1,0 +1,28 @@
+menuconfig SCHED_SCHEDULER
+    bool "General Scheduler Options"
+    default y
+    help
+      Enable options related to the task scheduler, such as lottery
+      scheduling, energy-aware scheduling, and logging.
+      
+config SCHED_LOTTERY
+    bool "Enable Lottery Scheduling"
+    default y
+    help
+      Enable Lottery Scheduling policy for task selection based on lottery
+      tickets.
+
+config SCHED_ENERGY_AWARE
+    bool "Enable Energy-Aware Scheduling"
+    default y
+    help
+      Enable energy-aware scheduling, where task weights are adjusted
+      based on CPU energy efficiency.
+
+config SCHED_LOG
+    bool "Enable Scheduler Logging"
+    default y
+    help
+      Enable logging of task scheduling events like context switches and
+      runtime to /proc/sched_log.
+

@@ -1,0 +1,10 @@
+1. make clean
+2. make menuconfig
+3. make CC=gcc-12 -j$(nproc) WERROR=0 
+4. sudo make modules_install
+5. sudo make install
+6. sudo update-grub
+7. sudo reboot  
+
+username: gersi
+password: gersi1234

@@ -1,0 +1,10 @@
+kernel/sched/energy_aware.c:  
+comment include "fair.h"
+
+errors Makefiles:
+deleted everything - scheduler log policy
+
+debian/ubuntu certificate errors:
+scripts/config --set-str CONFIG_SYSTEM_TRUSTED_KEYS
+scripts/config --set-str CONFIG_SYSTEM_REVOCATION_KEYS
+
