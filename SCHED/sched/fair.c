@@ -7282,6 +7282,18 @@ pick_next_task_fair(struct rq *rq, struct task_struct *prev, struct rq_flags *rf
 	struct task_struct *p;
 	int new_tasks;
 
+#ifdef CONFIG_SCHED_LOTTERY
+
+	if (sysctl_sched_lottery_enabled) { 
+		p = pick_next_task_lottery(rq);
+		if (p) {
+			if (prev)
+				put_prev_task(rq, prev);
+			return p;
+		}
+	}
+#endif
+
 again:
 	if (!sched_fair_runnable(rq))
 		goto idle;

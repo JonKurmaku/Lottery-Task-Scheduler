@@ -4,8 +4,9 @@
 #include <linux/sched.h>
 #include <linux/list.h>
 
+int sysctl_sched_lottery_enabled = 1;
 /* Lottery Scheduling: pick a task based on a random ticket selection */
-static struct task_struct *pick_next_task_lottery(struct rq *rq)
+struct task_struct *pick_next_task_lottery(struct rq *rq)
 {
 	struct task_struct *p;
 	unsigned long total_tickets = 0, winner, sum = 0;

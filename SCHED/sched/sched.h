@@ -85,6 +85,12 @@
 # define SCHED_WARN_ON(x)	({ (void)(x), 0; })
 #endif
 
+
+#ifdef CONFIG_SCHED_LOTTERY
+extern struct task_struct *pick_next_task_lottery(struct rq *rq);
+extern int sysctl_sched_lottery_enabled; 
+#endif
+
 struct rq;
 struct cpuidle_state;
 
@@ -2240,6 +2246,7 @@ static inline bool sched_fair_runnable(struct rq *rq)
 
 extern struct task_struct *pick_next_task_fair(struct rq *rq, struct task_struct *prev, struct rq_flags *rf);
 extern struct task_struct *pick_next_task_idle(struct rq *rq);
+
 
 #define SCA_CHECK		0x01
 #define SCA_MIGRATE_DISABLE	0x02
