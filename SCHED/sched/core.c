@@ -4405,6 +4405,10 @@ int sched_fork(unsigned long clone_flags, struct task_struct *p)
 	plist_node_init(&p->pushable_tasks, MAX_PRIO);
 	RB_CLEAR_NODE(&p->pushable_dl_tasks);
 #endif
+#ifdef CONFIG_SCHED_LOG
+		p->sched_log.ctx_swtiches = 0;
+		p->sched_log.total_runtime_ns=0;
+#endif
 	return 0;
 }
 

@@ -91,6 +91,15 @@ extern struct task_struct *pick_next_task_lottery(struct rq *rq);
 extern int sysctl_sched_lottery_enabled; 
 #endif
 
+
+#ifdef CONFIG_SCHED_LOG
+		struct 
+		{
+			u64 ctx_switches;
+			u64 total_runtime_ns;
+		} sched_log;
+#endif		
+
 struct rq;
 struct cpuidle_state;
 
