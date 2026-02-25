@@ -91,6 +91,20 @@ extern struct task_struct *pick_next_task_lottery(struct rq *rq);
 extern int sysctl_sched_lottery_enabled; 
 #endif
 
+/*
+
+SHOULD BE DEFINED IN THE GLOBAL SCHEDULER HEADER
+IN: include/linux/sched.h
+
+/*#ifdef CONFIG_SCHED_LOG
+		struct 
+		{
+			u64 ctx_switches;
+			u64 total_runtime_ns;
+		} sched_log;
+#endif		
+*/
+
 struct rq;
 struct cpuidle_state;
 
