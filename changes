@@ -8,3 +8,4 @@ debian/ubuntu certificate errors:
 scripts/config --set-str CONFIG_SYSTEM_TRUSTED_KEYS
 scripts/config --set-str CONFIG_SYSTEM_REVOCATION_KEYS
 
+Define SCHED_LOG in include/linux/sched.h
